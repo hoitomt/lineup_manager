@@ -1,0 +1,13 @@
+%h1=@game.display_date
+
+- if @players
+  = form_for @game do |g|
+    .field
+      = g.label :number_of_lineups
+      = g.text_field :number_of_lineups
+    - @players.each do |game_player|
+      .field
+        = check_box 'available', game_player.player.id, {checked: game_player.available}
+        = game_player.player.name
+    .actions
+      = submit_tag 'Save'

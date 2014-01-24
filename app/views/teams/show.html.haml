@@ -1,0 +1,14 @@
+%p#notice= notice
+
+%h1= @team.name
+
+- if @games
+  - @games.each do |game|
+    %p=link_to game.display_date, game
+
+%p
+  =link_to 'New Game', new_game_path(team_id: @team.id)
+
+= link_to 'Edit', edit_team_path(@team)
+\|
+= link_to 'Back', teams_path

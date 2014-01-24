@@ -1,0 +1,13 @@
+%h1=@game.display_date
+
+%p 
+  %span 
+    %strong Number of Lineups
+  %span #{@game.number_of_lineups}
+
+- if @players
+
+  - @players.each do |game_player|
+    %p
+      %span #{game_player.available}
+      %span #{game_player.player.name}

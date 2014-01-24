@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %title LineupManager
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+    = yield :head
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
+      .container
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li
+              = link_to root_path do
+                %span.glyphicon.glyphicon-home Home
+            %li
+              = link_to teams_path do
+                %span.glyphicon.glyphicon-glass Teams
+            %li
+              = link_to players_path do
+                %span.glyphicon.glyphicon-user Players
+    .container.home-top-margin
+      = yield
+      .footer
+        %p
+          &copy;2013

@@ -1,0 +1,5 @@
+%h1 Games
+
+- if @games
+  - @games.each do |game|
+    %p=link_to game.display_date, game
